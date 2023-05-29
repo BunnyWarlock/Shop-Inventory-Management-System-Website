@@ -1,0 +1,34 @@
+.body {
+    padding: 25px;
+    background-color: rgba(81, 39, 33, 0.8);
+    border-radius: 20px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header {
+  text-align: center;
+}
+input, select {
+  background-color: rgba(40, 44, 52, 0.4);
+  border: none;
+  color: #cbc8c7;
+}
+u {
+  text-decoration: underline;
+  text-decoration-color: #fec89a;
+}

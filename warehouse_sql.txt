@@ -1,0 +1,56 @@
+create database WarehouseDB;
+use WarehouseDB;
+
+create table users(
+    ID int primary key auto_increment,
+    Name varchar(100) not null,
+    Email varchar(255) unique not null,
+    PassHash varchar(255) not null
+);
+
+create table shop(
+    Name varchar(100) primary key,
+    owner_id int not null,
+    date_of_creation date not null,
+    foreign key (owner_id) references users(ID) on DELETE CASCADE
+);
+
+CREATE TABLE role (
+    u_id int PRIMARY KEY,
+    role_name varchar(20) DEFAULT 'PENDING' not null,
+    shop varchar(100) not null,
+    FOREIGN KEY (u_id) REFERENCES users(ID) on DELETE CASCADE,
+    FOREIGN KEY (shop) REFERENCES shop(Name) on DELETE CASCADE,
+    CHECK (role_name IN ('PENDING', 'ADMIN', 'MANAGER', 'CLERK'))
+);
+
+create table item(
+    ID int primary key auto_increment,
+    Shop varchar(100) not null,
+    Name varchar(255) not null,
+    CostPrice double default 0 not null,
+    SellingPrice double default 0 not null,
+    Min_amount int default 0 not null,
+    Max_amount int default 0 not null,
+    FOREIGN key (Shop) references shop(Name) on DELETE CASCADE
+);
+
+create table inventory(
+    item_id int PRIMARY key,
+    amount int default 0 not null,
+    foreign key (item_id) REFERENCES item(ID) on delete CASCADE
+);
+
+create table transaction(
+    dateNTime datetime,
+    item_id int,
+    shop varchar(100),
+    u_id int,
+    type varchar(5) not null,
+    quantity int default 0 not null,
+    check (type in ("BUY", "SELL")),
+    PRIMARY key (dateNTime, item_id, shop, u_id),
+    FOREIGN key (item_id) REFERENCES item(ID) on delete CASCADE,
+    FOREIGN key (shop) REFERENCES shop(Name) on DELETE CASCADE,
+    FOREIGN key (u_id) REFERENCES users(ID) on DELETE CASCADE
+);

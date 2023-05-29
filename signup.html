@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SIMS: Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="js/validation.js" defer></script>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style2.css">
+  </head>
+
+  <body>
+    <div class="bg">
+      <img src="img/background.jpg" alt="Background image">
+    </div>
+
+    <nav>
+      <h3 style="padding-right: 20px !important;">SIMS: </h3>
+      <a href="login.php"><button style="padding: 0px 20px 0px 20px !important;">
+        <h3 style="padding:0; margin:0;">Log In</h3></button></a>
+      <h3 style="padding: 0px 20px 0px 20px !important;"> or </h3>
+      <a href="signup.html"><button style="padding: 0px 0px 0px 20px !important;">
+        <h3 style="padding:0; margin:0;">Sign Up</h3></button></a>
+    </nav>
+
+    <div class="body">
+      <div class="header">
+        <a href="login.php" style="text-decoration:none">
+          <h1 span style="margin:0; padding:0; font-size:75px; color: #fec89a;">SIMS</h1></a>
+        <a href="login.php"><h3 style="margin: 0; padding: 0; color: #cbc8c7;">
+          <u>Shop Inventory Managment System</u></h3></a>
+        <br>
+      </div>
+
+      <h1 style="margin:0; padding:0; color: #cbc8c7;">Sign Up</h1>
+      <form action="process_signup.php" method="post" id="signup">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name"
+                 style="margin-right: 0px !important; width: 100%">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email"
+                 style="margin-right: 0px !important; width: 100%">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password"
+                 style="margin-right: 0px !important; width: 100%">
+        </div>
+        <div>
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" placeholder="Enter your password again"
+                 style="margin-right: 0px !important; width: 100%">
+        </div>
+        <div>
+          <input type="radio" id="admin" name="admin" value="ADMIN" checked>
+          Make a new Shop
+        </div>
+        <div>
+          <input type="radio" id="not_admin" name="admin" value="PENDING">
+          Connect to an existing shop
+        </div>
+        <div>
+          <label for="shop">Shop Name</label>
+          <input type="text" id="shop" name="shop" placeholder="Enter the name of your Shop"
+                 style="margin-right: 0px !important; width: 100%">
+        </div>
+
+        <div class="header">
+          <button style="margin:10; padding:10; background-color: rgba(0, 0, 0, 0.0); border: none;">
+            <br><h3 style="margin:0; padding:0; color: #fec89a;">Create Account</h3>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <footer style="display: flex; justify-content: center; border: none;">
+      <img class="logo" src="img/logo.jpg" alt="logo" height="50" width="50" style="border-radius:5px; margin: auto; opacity: 50%;">
+    </footer>
+
+  </body>
+</html>
